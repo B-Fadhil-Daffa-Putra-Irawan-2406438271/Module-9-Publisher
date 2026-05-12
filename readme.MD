@@ -9,3 +9,12 @@ URL `amqp://guest:guest@localhost:5672` pada publisher sama dengan URL yang digu
 # Screenshot RABBITMQ
 
 ![Rabbit mq](static/Rabbit.PNG)
+
+Subscriber connnected
+![Rabbit sub](static/RabbitSub.PNG)
+
+Subscriber console
+![Rabbit pub](static/RabbitPub2.PNG)
+![Rabbit pub](static/RabbitPub.PNG)
+
+Pada tahap ini, subscriber dijalankan terlebih dahulu agar siap menerima event dari message broker. Setelah itu, publisher dijalankan menggunakan perintah `cargo run`. Dalam satu kali eksekusi, publisher mengirimkan lima event `UserCreatedEventMessage` ke RabbitMQ melalui event bernama `user_created`. Kelima event tersebut berisi data pengguna dengan `user_id` dan `user_name`, seperti Amir, Budi, Cica, Dira, dan Emir. Setelah event masuk ke RabbitMQ, subscriber yang sedang mendengarkan queue tersebut menerima dan memproses pesan satu per satu. Hal ini terlihat dari terminal subscriber yang menampilkan output `Message received` untuk setiap event yang dikirim oleh publisher. Dengan demikian, proses ini menunjukkan bahwa publisher dan subscriber tidak berkomunikasi secara langsung, tetapi melalui RabbitMQ sebagai message broker. Menurut saya, mekanisme ini membuat sistem lebih fleksibel karena publisher tetap dapat mengirim event tanpa harus menunggu subscriber memprosesnya secara langsung.
