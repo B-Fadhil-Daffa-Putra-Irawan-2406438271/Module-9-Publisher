@@ -5,3 +5,7 @@ Dalam satu kali run, program publisher mengirimkan lima data atau lima event ke 
 
 ### The url of: “amqp://guest:guest@localhost:5672” is the same as in the subscriber program, what does it mean?
 URL `amqp://guest:guest@localhost:5672` pada publisher sama dengan URL yang digunakan pada subscriber. Hal ini berarti publisher dan subscriber terhubung ke message broker yang sama, yaitu RabbitMQ yang berjalan di komputer lokal. Kata `guest` pertama adalah username untuk mengakses RabbitMQ, sedangkan `guest` kedua adalah password dari username tersebut. Bagian `localhost` menunjukkan bahwa RabbitMQ berjalan pada komputer yang sama dengan program publisher dan subscriber. Angka `5672` adalah port default yang digunakan RabbitMQ untuk koneksi AMQP. Karena publisher dan subscriber memakai URL yang sama, maka event yang dikirim oleh publisher dapat masuk ke RabbitMQ yang sama dan kemudian diterima oleh subscriber yang sesuai.
+
+# Screenshot RABBITMQ
+
+![Rabbit mq](static/Rabbit.PNG)
